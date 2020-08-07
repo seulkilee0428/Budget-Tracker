@@ -15,7 +15,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/budget", {
+//Set up promises with mongoose
+mongoose.Promise = global.Promise;
+//Connect to the Mongo DB
+mongoose.connect("mongodb://user1:password1@ds041164.mlab.com:41164/heroku_pjg4qh8v", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
